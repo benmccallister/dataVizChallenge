@@ -109,7 +109,11 @@ Our purpose is to investigate whether Coors Field in Denver, Colorado is truly t
 
 **Question 1: Hypothesis Formation**
 - Why might high altitude affect baseball performance?  Is Coors Field affected by high altitude?
-:::
+
+**Answer:**
+
+ High altitude allows the ball to fly further allowing for more home runs. Coors Field is in Denver, Colorado a high altitude city. It is possibe that the Coors Field, by virtue of its altitude tends to have more home runs per game.
+
 
 ## Stage 2: Curation of Content
 
@@ -146,6 +150,11 @@ print("2010 Stadium Averages (Top 5):")
 print(avgDF_2010.head())
 print("\n2021 Stadium Averages (Top 5):")
 print(avgDF_2021.head())
+
+# Count games in the dataset
+print(f"\nTotal games in 2010: {len(df2010)}")
+print(f"Total games in 2021: {len(df2021)}")
+print(f"Combined total games: {len(df2010) + len(df2021)}")
 ```
 
 ::: {.callout-important}
@@ -153,7 +162,10 @@ print(avgDF_2021.head())
 
 **Question 1: Data Aggregation Strategy**
 - How many games are in the dataset? Why do we aggregate individual games into stadium averages before we start the visualization process?
-:::
+
+**Answer:**
+
+ There are 2430 games in 2010 and 2429 games in 2021. There are 4859 total combined games. Our goal is to predict whether or not Coors Field in Denver, Colorado is the most run-friendly baseball stadium in MLB. We need to compare stadium averages to determine this.
 
 ## Stage 3: Structuring of Visual Mappings
 
@@ -212,10 +224,34 @@ plt.show()
 - Why is a horizontal bar chart better than a scatter plot for this data?
 - When would you choose a vertical bar chart over horizontal?
 
+**Answer:**
+
+**Horizontal bar chart vs. scatter plot:**
+- **Categorical Data**: Scatterplots can often be used to show a particular linear trend. Bar charts can be used to group and rank categorical data.
+- **Readability**: Stadium names are long text labels that fit better horizontally. With 30+ stadiums, horizontal bars prevent label overlap and rotation issues.
+- **Comparison**: Bar charts make it easy to compare values across categories by comparing bar lengths, while scatter plots don't provide clear categorical boundaries.
+- **Ordering**: We can easily sort stadiums by runs to show ranking.
+
+**Vertical vs. Horizontal bar charts:**
+- **Choose horizontal when**: You have many categories and/or long category labels.
+- **Choose vertical when**: You have few categories or shorter labels
+- **For our data**: Horizontal is better because we have 30 stadiums with 3-letter codes, and we want to emphasize the ranking by stadium. It would be harder to read the data labels with a vertical bar chart.
+
 **Question 2: Aesthetic Mappings**
 - What does the color highlighting accomplish in Approach 4?
 - How does position (x/y) compare to color for encoding data?
 
+**Answer:**
+
+**Color highlighting in Approach 4:**
+- **Focus**: Draws immediate attention to Colorado (COL) as the key finding
+- **Comparison**: Makes it easy to see Colorado's position relative to other stadiums
+- **Storytelling**: Reinforces the hypothesis that altitude affects performance
+
+**Position vs. Color for encoding data:**
+- **Position (x/y)**: Can rank by data point
+- **Color**: Can draw immediate distinction to a particular data point
+- **Best practice**: Use position for the main data (runs), color for emphasis (highlighting Colorado)
 :::
 
 ## Stage 4: Formatting for Your Audience
