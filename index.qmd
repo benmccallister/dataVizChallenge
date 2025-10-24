@@ -293,7 +293,7 @@ ax.legend(handles=[colorado_bar, other_bar], loc='lower right', frameon=True)
 
 # Add annotation for Colorado (REMOVED)
 # colorado_index = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"].index[0]
-# colorado_runs = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"]["totalRuns"].iloc[0]
+colorado_runs = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"]["totalRuns"].iloc[0]
 # ax.annotate(f"COL: {colorado_runs:.2f} runs/game", 
 #             xy=(colorado_runs, colorado_index), 
 #             xytext=(colorado_runs + 0.5, colorado_index),
