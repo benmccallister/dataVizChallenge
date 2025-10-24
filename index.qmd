@@ -291,14 +291,14 @@ colorado_bar = plt.Rectangle((0,0),1,1, color="darkorchid", label="Colorado Rock
 other_bar = plt.Rectangle((0,0),1,1, color="lightgrey", label="Other Stadiums")
 ax.legend(handles=[colorado_bar, other_bar], loc='lower right', frameon=True)
 
-# Add annotation for Colorado
-colorado_index = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"].index[0]
-colorado_runs = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"]["totalRuns"].iloc[0]
-ax.annotate(f"COL: {colorado_runs:.2f} runs/game", 
-            xy=(colorado_runs, colorado_index), 
-            xytext=(colorado_runs + 0.5, colorado_index),
-            arrowprops=dict(arrowstyle='->', color='darkorchid', lw=2),
-            fontsize=10, fontweight='bold', color='darkorchid')
+# Add annotation for Colorado (REMOVED)
+# colorado_index = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"].index[0]
+# colorado_runs = avgDF_2010_sorted[avgDF_2010_sorted.home == "COL"]["totalRuns"].iloc[0]
+# ax.annotate(f"COL: {colorado_runs:.2f} runs/game", 
+#             xy=(colorado_runs, colorado_index), 
+#             xytext=(colorado_runs + 0.5, colorado_index),
+#             arrowprops=dict(arrowstyle='->', color='darkorchid', lw=2),
+#             fontsize=10, fontweight='bold', color='darkorchid')
 
 # Set x-axis to start from 0 for better comparison
 ax.set_xlim(0, max(avgDF_2010_sorted.totalRuns) * 1.1)
@@ -323,8 +323,13 @@ print(f"Colorado is {((colorado_runs / avgDF_2010_sorted.totalRuns.mean()) - 1) 
 - What elements make this visualization suitable for a business presentation?
 - Is the annotation on the visualization helpful?  Can you fix its placement?
 
-:::
+**Answer:**
 
+- There are a few things that make it suitable for a business presentation.
+- **Labels**: Clearly labled X and Y axes, and clearly labeled presentation header. The categories which are the stadiums are also clearly labeled.
+- **Obvious point**: With the title, the order ranking, and the single color, it is obvious what is being presented, that COL is the most run-friendly stadium.
+
+- **Annotation**: The annotation which showed a purple left-pointing arrow and purple lettering indicating 'COL' looked awkward and unnecessary. COL is already distinct at the top and singularly colored as well as mentioned in the title. It has been removing by commenting the line that adds the annotation.
 
 ## Advanced Object-Oriented Techniques
 
